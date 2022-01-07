@@ -1,0 +1,13 @@
+### Intellij ###
+*.iml
+.idea/
+out/
+.DS_Store
+
+
+### Linux ###
+tmp/
+*.tmp
+*.bak
+*.swp
+/bin/
