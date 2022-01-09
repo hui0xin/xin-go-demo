@@ -5,9 +5,10 @@ import (
 	"time"
 )
 
-//ChannelSelectOvertime Demo 超时 对于一个需要连接外部资源， 或者有耗时较长的操作的程序而言是很重要的。
+//ChannelSelectOvertime Demo 超时 处理
+//对于一个需要连接外部资源， 或者有耗时较长的操作的程序而言是很重要的。
 //得益于通道和 select，在 Go 中实现超时操作是简洁而优雅的。
-func main(){
+func main() {
 
 	//在这个例子中，假如我们执行一个外部调用， 并在 2 秒后使用通道 c1 返回它的执行结果。
 	c1 := make(chan string, 1)
@@ -39,4 +40,5 @@ func main(){
 		fmt.Println("timeout 2")
 	}
 }
+
 //运行这个程序，首先显示运行超时的操作，然后是成功接收的。

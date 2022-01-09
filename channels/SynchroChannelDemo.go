@@ -5,7 +5,6 @@ import (
 	"time"
 )
 
-
 //我们将要在协程中运行这个函数。 done 通道将被用于通知其他协程这个函数已经完成工作。
 func worker(done chan bool) {
 	fmt.Print("working...")
@@ -15,10 +14,10 @@ func worker(done chan bool) {
 	done <- true
 }
 
-//SynchroChannel Demo 同步通道
+//SynchroChannelDemo 同步通道
 //我们可以使用通道来同步协程之间的执行状态。
 //使用阻塞接收的方式，实现了等待另一个协程完成。 如果需要等待多个协程，WaitGroup 是一个更好的选择。
-func main(){
+func main() {
 
 	//运行一个 worker 协程，并给予用于通知的通道。
 	done := make(chan bool, 1)

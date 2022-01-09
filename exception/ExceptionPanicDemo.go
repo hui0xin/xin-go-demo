@@ -4,6 +4,7 @@ import (
 	"os"
 )
 
+//ExceptionPanicDemo.go
 // panic 意味着有些出乎意料的错误发生。 通常我们用它来表示程序正常运行中不应该出现的错误， 或者我们不准备优雅处理的错误
 func main() {
 

@@ -18,7 +18,7 @@ func (r rect) perim() int {
 }
 
 //结构体类型定义方法(methods)
-func main(){
+func main() {
 	r := rect{width: 10, height: 5}
 	//这里我们调用上面为结构体定义的两个方法。
 	fmt.Println("area: ", r.area())
@@ -36,4 +36,3 @@ func main(){
 	fmt.Println("area--r: ", r.area())
 	fmt.Println("perim--r:", r.perim())
 }
-

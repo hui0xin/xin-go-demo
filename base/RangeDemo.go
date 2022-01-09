@@ -2,9 +2,9 @@ package main
 
 import "fmt"
 
-//Range 遍历
+//RangeDemo.go 遍历
 //range 用于迭代各种各样的数据结构。
-func main(){
+func main() {
 
 	//这里我们使用 range 来对 slice 中的元素求和。 数组也可以用这种方法初始化并赋初值。
 	nums := []int{2, 3, 4}
@@ -14,12 +14,11 @@ func main(){
 	}
 	fmt.Println("sum:", sum)
 
-
 	/**
 	range 在数组和 slice 中提供对每项的索引和值的访问。
 	上面我们不需要索引，所以我们使用 空白标识符 _ 将其忽略。
 	实际上，我们有时候是需要这个索引的。
-	 */
+	*/
 	for i, num := range nums {
 		if num == 3 {
 			fmt.Println("index:", i)

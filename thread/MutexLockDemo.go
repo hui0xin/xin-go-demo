@@ -8,9 +8,9 @@ import (
 	"time"
 )
 
-//MutexLockDemo.go
-//互斥锁
-func main(){
+//MutexLockDemo.go 互斥锁
+// 在前面的例子中，我们看到了如何使用原子操作来管理简单的计数器。 对于更加复杂的情况，我们可以使用一个互斥锁 来在 Go 协程间安全的访问数据。
+func main() {
 
 	//在这个例子中，state 是一个 map。
 	var state = make(map[int]int)
@@ -71,5 +71,3 @@ func main(){
 }
 
 //运行这个程序，显示我们进行了大约 90,000 次 mutex 同步的 state 操作。
-
-

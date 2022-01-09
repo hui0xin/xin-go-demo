@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-//切片 slice demo
+//SliceDemo.go 切片
 //Slice 是 Go 中一个重要的数据类型，它提供了比数组更强大的序列交互方式。
-func main(){
+func main() {
 
 	/**
 	与数组不同，slice 的类型仅由它所包含的元素的类型决定（与元素个数无关）。
 	要创建一个长度不为 0 的空 slice，需要使用内建函数 make。
 	这里我们创建了一个长度为 3 的 string 类型的 slice（初始值为零值）。
-	 */
+	*/
 	s := make([]string, 3)
 	fmt.Println("emp:", s)
 
@@ -23,19 +23,18 @@ func main(){
 	//len 返回 slice 的长度
 	fmt.Println("len:", len(s))
 
-
 	/**
 	除了基本操作外，slice 支持比数组更丰富的操作。
 	比如 slice 支持内建函数 append，
 	该函数会返回一个包含了一个或者多个新值的 slice。注意由于 append 可能返回一个新的 slice，我们需要接收其返回值。
-	 */
+	*/
 	s = append(s, "d")
 	s = append(s, "e", "f")
 	fmt.Println("apd:", s)
 
 	/**
 	slice 还可以 copy。这里我们创建一个空的和 s 有相同长度的 slice——c， 然后将 s 复制给 c。
-	 */
+	*/
 	c := make([]string, len(s))
 	copy(c, s)
 	fmt.Println("cpy:", c)
@@ -68,3 +67,5 @@ func main(){
 	}
 	fmt.Println("2d: ", twoD)
 }
+
+// 注意，slice 和数组是不同的类型，但它们通过 fmt.Println 打印的输出结果是类似的。

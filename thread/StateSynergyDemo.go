@@ -11,7 +11,7 @@ import (
 在这个例子中，state 将被一个单独的协程拥有。 这能保证数据在并行读取时不会混乱。
 为了对 state 进行读取或者写入， 其它的协程将发送一条数据到目前拥有数据的协程中，
 然后等待接收对应的回复。 结构体 readOp 和 writeOp 封装了这些请求，并提供了响应协程的方法。
- */
+*/
 type readOp struct {
 	key  int
 	resp chan int
@@ -22,12 +22,12 @@ type writeOp struct {
 	resp chan bool
 }
 
-//StateSynergyDemo 状态协程
+//StateSynergyDemo  状态协程
 //在前面的例子中，我们用 互斥锁 进行了明确的锁定，
 //来让共享的 state 跨多个 Go 协程同步访问。
 //另一个选择是，使用内建协程和通道的同步特性来达到同样的效果。
 //Go 共享内存的思想是，通过通信使每个数据仅被单个协程所拥有，即通过通信实现共享内存。 基于通道的方法与该思想完全一致！
-func main(){
+func main() {
 
 	//和前面的例子一样，我们会计算操作执行的次数。
 	var readOps uint64
@@ -91,7 +91,7 @@ func main(){
 	writeOpsFinal := atomic.LoadUint64(&writeOps)
 	fmt.Println("writeOps:", writeOpsFinal)
 }
+
 //运行这个程序显示这个基于协程的状态管理的例子 达到了每秒大约 80,000 次操作。
 //通过这个例子我们可以看到，基于协程的方法比基于互斥锁的方法要复杂得多。 但是，在某些情况下它可能很有用，
 //例如，当你涉及其他通道，或者管理多个同类互斥锁时，会很容易出错。 您应该使用最自然的方法，尤其是在理解程序正确性方面。
-

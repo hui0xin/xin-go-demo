@@ -15,9 +15,9 @@ func pong(pings <-chan string, pongs chan<- string) {
 	pongs <- msg
 }
 
-// ChannelDirection 通道方向 demo
+// ChannelDirection 通道方向
 //当使用通道作为函数的参数时，你可以指定这个通道是否为只读或只写。 该特性可以提升程序的类型安全。
-func main(){
+func main() {
 	pings := make(chan string, 1)
 	pongs := make(chan string, 1)
 	ping(pings, "passed message")

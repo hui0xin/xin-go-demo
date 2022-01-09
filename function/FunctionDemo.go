@@ -5,7 +5,7 @@ import "fmt"
 /**
 这里是一个函数，接受两个 int 并且以 int 返回它们的和
 Go 需要明确的 return，也就是说，它不会自动 return 最后一个表达式的值
- */
+*/
 func plus(a int, b int) int {
 	return a + b
 }
@@ -58,14 +58,15 @@ func fact(n int) int {
 func zeroval(ival int) {
 	ival = 0
 }
+
 //zeroptr 有一个和上面不同的参数：*int，这意味着它使用了 int 指针。
 //紧接着，函数体内的 *iptr 会 解引用 这个指针，从它的内存地址得到这个地址当前对应的值。 对解引用的指针赋值，会改变这个指针引用的真实地址的值。
 func zeroptr(iptr *int) {
 	*iptr = 0
 }
 
-//函数 demo
-func main(){
+//FunctionDemo.go 函数
+func main() {
 
 	//通过 函数名(参数列表) 来调用函数，
 	res := plus(1, 2)
@@ -74,15 +75,16 @@ func main(){
 	var res2 = plusPlus(1, 2, 3)
 	fmt.Println("1+2+3 =", res2)
 
+	fmt.Println("------------多返回值函数--------------")
 	// 多返回值的调用
 	a, b := vals()
-	fmt.Println("a =",a,",b =",b)
+	fmt.Println("a =", a, ",b =", b)
 
 	//如果你仅仅需要返回值的一部分的话，你可以使用空白标识符 _。
 	_, c := vals()
 	fmt.Println(c)
 
-	fmt.Println("--------------------------")
+	fmt.Println("------------变参函数--------------")
 	//变参函数使用常规的调用方式，传入独立的参数。
 	sum(1, 2)
 	sum(1, 2, 3)
@@ -91,7 +93,7 @@ func main(){
 	nums := []int{1, 2, 3, 4}
 	sum(nums...)
 
-	fmt.Println("############################")
+	fmt.Println("-------------闭包-----------------")
 	//我们调用 intSeq 函数，将返回值（一个函数）赋给 nextInt。 这个函数的值包含了自己的值 i，这样在每次调用 nextInt 时，都会更新 i 的值。
 	nextInt := intSeq()
 	//调用多次，就可以执行多次内部函数
@@ -103,13 +105,12 @@ func main(){
 	fmt.Println(newInts())
 
 	//递归调用
-	fmt.Println("*****************************")
+	fmt.Println("-------------递归-----------------")
 	fmt.Println(fact(7))
 
 	//指针调用
-	fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+	fmt.Println("-------------指针-----------------")
 	i := 1
-
 	//值传递
 	zeroval(i)
 	fmt.Println("zeroval:", i)
@@ -118,5 +119,7 @@ func main(){
 	zeroptr(&i)
 	fmt.Println("zeroptr:", i)
 	fmt.Println("pointer:", &i)
+
 }
 
+// zeroval 在 main 函数中不能改变 i 的值， 但是 zeroptr 可以，因为它有这个变量的内存地址的引用。

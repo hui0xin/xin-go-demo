@@ -15,13 +15,13 @@ func f1(arg int) (int, error) {
 	return arg + 3, nil
 }
 
-
 //你还可以通过实现 Error() 方法来自定义 error 类型。
 //这里使用自定义错误类型来表示上面例子中的参数错误。
 type argError struct {
 	arg  int
 	prob string
 }
+
 func (e *argError) Error() string {
 	return fmt.Sprintf("%d - %s", e.arg, e.prob)
 }
@@ -34,11 +34,11 @@ func f2(arg int) (int, error) {
 	return arg + 3, nil
 }
 
-//exception demo
+//ExceptionDemo.go
 //符合 Go 语言习惯的做法是使用一个独立、明确的返回值来传递错误信息。
 //这与 Java、Ruby 使用的异常（exception） 以及在 C 语言中有时用到的重载 (overloaded) 的单返回/错误值有着明显的不同。
 //Go 语言的处理方式能清楚的知道哪个函数返回了错误，并使用跟其他（无异常处理的）语言类似的方式来处理错误。
-func main(){
+func main() {
 
 	//下面的两个循环测试了每一个会返回错误的函数。 注意，在 if 的同一行进行错误检查，是 Go 代码中的一种常见用法。
 	for _, i := range []int{7, 42} {
@@ -64,4 +64,3 @@ func main(){
 	}
 
 }
-

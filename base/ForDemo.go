@@ -2,18 +2,18 @@ package main
 
 import "fmt"
 
-//for循环 demo
-func main(){
+//ForDemo.go for循环
+func main() {
 
 	//第一种
 	i := 1
-	for i<10 {
+	for i < 10 {
 		fmt.Println(i)
-		i=i+1
+		i = i + 1
 	}
 
 	//经典写法
-	for j :=1; j<10; j++ {
+	for j := 1; j < 10; j++ {
 		fmt.Println(j)
 	}
 
@@ -21,6 +21,7 @@ func main(){
 	for {
 		fmt.Println("loop")
 		break
+		//return
 	}
 	fmt.Println("______________________________________")
 	//跳出单次循环

@@ -17,8 +17,8 @@ func worker(id int, jobs <-chan int, results chan<- int) {
 	}
 }
 
-//WorkerPool 工作池
-func main(){
+//WorkerPoolDemo.go 工作池
+func main() {
 
 	//为了使用 worker 工作池并且收集其的结果，我们需要 2 个通道。
 	const numJobs = 5
@@ -41,5 +41,5 @@ func main(){
 		<-results
 	}
 }
-//运行程序，显示 5 个任务被多个 worker 执行。 尽管所有的工作总共要花费 5 秒钟，但该程序只花了 2 秒钟， 因为 3 个 worker 是并行的。
 
+//运行程序，显示 5 个任务被多个 worker 执行。 尽管所有的工作总共要花费 5 秒钟，但该程序只花了 2 秒钟， 因为 3 个 worker 是并行的。

@@ -5,6 +5,7 @@ import (
 	"os"
 )
 
+// DeferDemo.go
 //Defer === finally
 //用于确保程序在执行完成后，会调用某个函数，一般是执行清理工作。 Defer 的用途跟其他语言的 ensure 或 finally 类似。
 func main() {

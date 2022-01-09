@@ -4,8 +4,9 @@ import (
 	"fmt"
 )
 
+//ChannelsDemo.go
 //通道(channels) 是连接多个协程的管道。 你可以从一个协程将值发送到通道，然后在另一个协程中接收。
-func main(){
+func main() {
 
 	//使用 make(chan val-type) 创建一个新的通道。 通道类型就是他们需要传递值的类型。
 	messages := make(chan string)

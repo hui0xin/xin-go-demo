@@ -8,8 +8,9 @@ type person struct {
 	age  int
 }
 
-//结构体 demo
-func main(){
+//StructDemo.go 结构体
+//Go 的结构体(struct) 是带类型的字段(fields)集合。 这在组织数据时非常有用。
+func main() {
 
 	//使用这个语法创建新的结构体元素。
 	var parson1 = person{"Bob", 20}
@@ -39,4 +40,3 @@ func main(){
 	sp.age = 51
 	fmt.Println(sp.age)
 }
-

@@ -5,8 +5,9 @@ import (
 	"time"
 )
 
+//ChannelSelectDemo.go
 //选择器（select） 让你可以同时等待多个通道操作。 将协程、通道和选择器结合，是 Go 的一个强大特性。
-func main(){
+func main() {
 
 	//我们将从两个通道中选择。
 	c1 := make(chan string)
@@ -34,3 +35,4 @@ func main(){
 }
 
 //跟预期的一样，我们首先接收到值 "one"，然后是 "two"。
+//注意，程序总共仅运行了两秒左右。因为 1 秒 和 2 秒的 Sleeps 是并发执行的，

@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-//sort 排序
+//SortDemo.go 排序
 //Go 的 sort 包实现了内建及用户自定义数据类型的排序功能。 我们先来看看内建数据类型的排序。
 func main() {
 

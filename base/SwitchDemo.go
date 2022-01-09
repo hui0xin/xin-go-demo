@@ -5,11 +5,11 @@ import (
 	"time"
 )
 
-//Switch demo
-func main(){
+//SwitchDemo.go
+func main() {
 
 	//第一种常规
-	num := 2;
+	num := 2
 	fmt.Print("write ", num, " as : ")
 	switch num {
 	case 1:
@@ -24,15 +24,18 @@ func main(){
 	var date = time.Now().Weekday()
 	fmt.Println(date)
 	//第二种
-	switch date{
+	switch date {
+	//可以使用逗号来分隔多个表达式。
 	case time.Saturday, time.Sunday:
 		fmt.Println("It's the weekend")
 	default:
 		fmt.Println("It's a weekday")
 	}
+
 	fmt.Println("------------------------------")
 	t := time.Now()
 	fmt.Println(t)
+	//不带表达式的 switch 是实现 if/else 逻辑的另一种方式。 这里还展示了 case 表达式也可以不使用常量。
 	switch {
 	case t.Hour() < 12:
 		fmt.Println("It's before noon")

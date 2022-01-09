@@ -5,10 +5,10 @@ import (
 	"time"
 )
 
-//Ticker 打点器
+//TickerDemo.go打点器
 //定时器 是当你想要在未来某一刻执行一次时使用的 -
 //打点器 则是为你想要以固定的时间间隔重复执行而准备的。 这里是一个打点器的例子，它将定时的执行，直到我们将它停止。
-func main(){
+func main() {
 
 	//打点器和定时器的机制有点相似：使用一个通道来发送数据。 这里我们使用通道内建的 select，等待每 500ms 到达一次的值。
 	ticker := time.NewTicker(500 * time.Millisecond)
@@ -30,5 +30,5 @@ func main(){
 	done <- true
 	fmt.Println("Ticker stopped")
 }
-// 当我们运行这个程序时，打点器会在我们停止它前打点 3 次。
 
+// 当我们运行这个程序时，打点器会在我们停止它前打点 3 次。

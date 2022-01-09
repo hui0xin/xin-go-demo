@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-//map demo
-func main(){
+//MapDemo.go
+func main() {
 
 	//要创建一个空 map，需要使用内建函数 make：make(map[key-type]val-type)。
 	m := make(map[string]int)

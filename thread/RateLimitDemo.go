@@ -7,7 +7,7 @@ import (
 
 //RateLimitDemo
 //速率限制 是控制服务资源利用和质量的重要机制。 基于协程、通道和打点器，Go 优雅的支持速率限制。
-func main(){
+func main() {
 
 	//首先，我们将看一个基本的速率限制。 假设我们想限制对收到请求的处理，我们可以通过一个渠道处理这些请求。
 	requests := make(chan int, 5)
@@ -51,7 +51,7 @@ func main(){
 		fmt.Println("request", req, time.Now())
 	}
 }
+
+//go run rate-limiting.go
 //运行程序，我们看到第一批请求意料之中的大约每 200ms 处理一次。
 //第二批请求，由于爆发（burstable）速率控制，我们直接连续处理了 3 个请求， 然后以大约每 200ms 一次的速度，处理了剩余的 2 个请求。
-
-

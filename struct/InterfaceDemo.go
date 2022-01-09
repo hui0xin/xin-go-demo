@@ -43,7 +43,7 @@ func measure(g geometry) {
 }
 
 //interface demo
-func main(){
+func main() {
 
 	//结构体类型 circle 和 rect 都实现了 geometry 接口，
 	//所以我们可以将其实例作为 measure 的参数。
@@ -53,4 +53,3 @@ func main(){
 	measure(c)
 
 }
-

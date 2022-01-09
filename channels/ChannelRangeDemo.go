@@ -4,9 +4,9 @@ import (
 	"fmt"
 )
 
-//通道遍历 ChannelRange Demo
-//我们讲过 for 和 range 为基本的数据结构提供了迭代的功能。 我们也可以使用这个语法来遍历的从通道中取值。
-func main(){
+//通道遍历 ChannelRangeDemo
+// for 和 range 为基本的数据结构提供了迭代的功能。 我们也可以使用这个语法来遍历的从通道中取值。
+func main() {
 
 	//我们将遍历在 queue 通道中的两个值。
 	queue := make(chan string, 2)
@@ -20,5 +20,5 @@ func main(){
 		fmt.Println(elem)
 	}
 }
-//这个例子也让我们看到，一个非空的通道也是可以关闭的， 并且，通道中剩下的值仍然可以被接收到。
 
+//这个例子也让我们看到，一个非空的通道也是可以关闭的， 并且，通道中剩下的值仍然可以被接收到。
